@@ -28,7 +28,7 @@ public class TriangleFactory {
         return (alfa > 0 && beta > 0 && theta > 0) && ((alfa + beta + theta) == 180.0);
     }
 
-    public Triangle createRectangleTriangle(double a, double b, double c, double alfa, double beta) {
+    public Triangle createRightAngledTriangle(double a, double b, double c, double alfa, double beta) {
         return this.createTriangle(a,b,c,alfa, beta, 90);
     }
 
