@@ -21,15 +21,15 @@ public class TriangleFactory {
     }
 
     private boolean triangleInequality(double a, double b, double c) {
-        return 2 * Math.max(a, Math.max(b,c)) < a + b + c;
+        return (a < (b + c)) || (b < (a + c)) || (c < (b + a));
     }
 
     private boolean conditionOfAngles(double alfa, double beta, double theta) {
         return (alfa > 0 && beta > 0 && theta > 0) && ((alfa + beta + theta) == 180.0);
     }
 
-    public Triangle createRightAngledTriangle(double a, double b, double c, double alfa, double beta) {
-        return this.createTriangle(a,b,c,alfa, beta, 90);
+    public Triangle createRightAngledTriangle(double a, double b, double alfa, double beta) {
+        return this.createTriangle(a,b,Math.sqrt((a * a) + (b * b)),alfa, beta, 90);
     }
 
     public Triangle createEquilateralTriangle(double side) {

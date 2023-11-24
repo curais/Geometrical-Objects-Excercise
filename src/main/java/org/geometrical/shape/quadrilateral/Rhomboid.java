@@ -8,6 +8,6 @@ public class Rhomboid extends AbstractQuadrilateral{
 
     @Override
     public double getArea() {
-        return (this.getA() * this.getA()) * Math.sin(Math.toRadians(this.getAngleA()));
+        return (this.getA() * this.getB()) * Math.sin(Math.toRadians(this.getAngleA()));
     }
 }

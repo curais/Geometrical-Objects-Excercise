@@ -3,7 +3,7 @@ package org.geometrical.shape.ndimensional;
 import org.geometrical.shape.Shape;
 
 /**
- * This class represents a regular n-gon which all of its side have the same length
+ * This class represents a regular n-gon, with n >= 5; which all of its sides have the same length
  */
 public class RegularNSidesShape implements Shape {
 
@@ -27,11 +27,11 @@ public class RegularNSidesShape implements Shape {
 
     @Override
     public double getArea() {
-        return (getPerimeter() * getApothem()) / 2;
+        return (getPerimeter() * getApothem()) / 2.0;
     }
 
     private double getApothem() {
-        return lengthOfSides/(2 * Math.tan(Math.PI/numberOfSides));
+        return lengthOfSides/(2.0 * Math.tan(Math.PI/numberOfSides));
     }
 
     @Override

@@ -7,7 +7,7 @@ public abstract class AbstractQuadrilateral implements Shape {
     private final double angleA, angleB, angleC, angleD;
 
     protected AbstractQuadrilateral(double a, double b, double c, double d, double angleA, double angleB, double angleC, double angleD) {
-        if (!existenceOfQuadrilateralByAngles()) {
+        if (!existenceOfQuadrilateralByAngles(angleA, angleB, angleC, angleD)) {
             throw new IllegalArgumentException("Angles of quadrilateral should sum 360");
         }
         this.a = a;
@@ -52,7 +52,7 @@ public abstract class AbstractQuadrilateral implements Shape {
         return angleD;
     }
 
-    private boolean existenceOfQuadrilateralByAngles() {
+    private boolean existenceOfQuadrilateralByAngles(double angleA, double angleB, double angleC, double angleD) {
         return (angleA + angleB + angleC + angleD) == 360.0;
     }
 
